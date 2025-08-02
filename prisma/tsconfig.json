@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "rootDir": "../",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@/shared": ["../shared"]
+    }
+  },
+  "include": ["./"]
+}

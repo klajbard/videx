@@ -1,0 +1,20 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Video {
+  id            Int      @id @default(autoincrement())
+  title         String
+  thumbnail_url String
+  duration      Int
+  views         Int
+  // Should be array of strings but given sqlite is not supporting it
+  // we just use comma separated string for now
+  tags          String
+  created_at    DateTime @default(now())
+}
