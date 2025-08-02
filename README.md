@@ -109,7 +109,18 @@ npm run format
 
 - [ ] Implement CORS
 
-### API
+### API/Endpoints
 
 - [ ] Add bulk operations (bulk create, update, delete)
+- [ ] Create endpoint for already used tags
 - [ ] Implement soft deletes
+- [ ] Optimistic updates/update React Query on mutation cache
+- [ ] Allow to update video metadata
+
+### Client side validation
+
+- [ ] Custom error messages instead of built-in zod
+
+### Testing
+
+- [ ] More client side tests
