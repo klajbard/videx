@@ -12,7 +12,7 @@ model Video {
   title         String
   thumbnail_url String
   duration      Int
-  views         Int
+  views         Int      @default(0)
   // Should be array of strings but given sqlite is not supporting it
   // we just use comma separated string for now
   tags          String

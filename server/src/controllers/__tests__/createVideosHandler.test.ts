@@ -22,13 +22,13 @@ describe("createVideosHandler", () => {
       duration: 1200,
       tags: ["tutorial", "beginner"],
       thumbnail_url: faker.internet.url(),
-      views: 10,
     };
 
     const mockVideo = videoToEntity({
       ...videoData,
       created_at: new Date().toISOString(),
       id: 1,
+      views: 0,
     });
 
     testPrisma.video.create.mockResolvedValue(mockVideo);
@@ -48,7 +48,6 @@ describe("createVideosHandler", () => {
         tags: "tutorial,beginner",
         duration: videoData.duration,
         thumbnail_url: videoData.thumbnail_url,
-        views: videoData.views,
       },
     });
 
@@ -63,13 +62,13 @@ describe("createVideosHandler", () => {
       title: "Video Without Tags",
       duration: 1800,
       thumbnail_url: faker.internet.url(),
-      views: 100,
     };
 
     const mockVideo = videoToEntity({
       ...videoData,
       created_at: new Date().toISOString(),
       id: 1,
+      views: 0,
     });
 
     testPrisma.video.create.mockResolvedValue(mockVideo);
@@ -89,7 +88,6 @@ describe("createVideosHandler", () => {
         tags: "",
         duration: videoData.duration,
         thumbnail_url: videoData.thumbnail_url,
-        views: videoData.views,
       },
     });
 
@@ -110,7 +108,6 @@ describe("createVideosHandler", () => {
       duration: -1,
       tags: ["test"],
       thumbnail_url: faker.internet.url(),
-      views: 100,
     };
 
     // Action
@@ -137,7 +134,6 @@ describe("createVideosHandler", () => {
       duration: 1200,
       tags: ["test"],
       thumbnail_url: faker.internet.url(),
-      views: 10,
     };
 
     testPrisma.video.create.mockRejectedValue(new Error("Database error"));

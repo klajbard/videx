@@ -2,14 +2,13 @@ import type { Prisma, Video } from "@prisma/client";
 import { prismaClient } from "@/prisma";
 import { type CreateVideoSchema, tagsToString, type UpdateVideoSchema, type VideosParams } from "@/shared";
 
-export const createVideo = ({ title, tags, duration, thumbnail_url, views }: CreateVideoSchema): Promise<Video> =>
+export const createVideo = ({ title, tags, duration, thumbnail_url }: CreateVideoSchema): Promise<Video> =>
   prismaClient.video.create({
     data: {
       title,
       tags: tags ? tagsToString(tags) : "",
       duration,
       thumbnail_url,
-      views,
     },
   });
 

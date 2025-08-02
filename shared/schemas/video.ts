@@ -16,7 +16,6 @@ export const createVideoSchema = z.object({
   title: z.string().min(1),
   duration: z.number().int().min(1),
   thumbnail_url: z.string().min(1),
-  views: z.number().positive().default(0),
   tags: z.array(z.string()).optional(),
 });
 
