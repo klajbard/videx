@@ -7,7 +7,7 @@ export const videoSchema = z.object({
   thumbnail_url: z.string(),
   views: z.number(),
   tags: z.array(z.string()).optional(),
-  created_at: z.date(),
+  created_at: z.string(),
 });
 
 export type VideoSchema = z.infer<typeof videoSchema>;

@@ -27,7 +27,7 @@ describe("createVideosHandler", () => {
 
     const mockVideo = videoToEntity({
       ...videoData,
-      created_at: new Date(),
+      created_at: new Date().toISOString(),
       id: 1,
     });
 
@@ -68,7 +68,7 @@ describe("createVideosHandler", () => {
 
     const mockVideo = videoToEntity({
       ...videoData,
-      created_at: new Date(),
+      created_at: new Date().toISOString(),
       id: 1,
     });
 

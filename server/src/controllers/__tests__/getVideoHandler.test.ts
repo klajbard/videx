@@ -24,7 +24,7 @@ describe("getVideoHandler", () => {
       tags: ["test", "video"],
       thumbnail_url: "https://example.com/thumbnail.jpg",
       views: 100,
-      created_at: new Date(),
+      created_at: new Date().toISOString(),
     });
 
     testPrisma.video.findUnique.mockResolvedValue(mockVideo);

@@ -7,7 +7,7 @@ export const videoFromEntity = (video: Video): VideoSchema => {
     tags: tagsFromString(video.tags),
     duration: video.duration,
     id: video.id,
-    created_at: video.created_at,
+    created_at: video.created_at.toISOString(),
     thumbnail_url: video.thumbnail_url,
     views: video.views,
   });
@@ -19,7 +19,7 @@ export const videoToEntity = (video: VideoSchema): Video => {
     tags: tagsToString(video.tags),
     duration: video.duration,
     id: video.id,
-    created_at: video.created_at,
+    created_at: new Date(video.created_at),
     thumbnail_url: video.thumbnail_url,
     views: video.views,
   };
