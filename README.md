@@ -14,12 +14,13 @@ npm run prisma:seed # Seed database
 ### Run dev server
 
 ```bash
-npm run dev
+npm run dev:server
+npm run dev:client
 ```
 
 ### Run tests
 
-```bash‚
+```bash
 npm run test
 ```
 
@@ -40,6 +41,56 @@ npm run check
 ```bash
 npm run format
 ```
+
+## Project Structure
+
+```
+videx/
+├── client/                 # React frontend application
+│   ├── components/         # Reusable UI components
+│   ├── hooks/              # Custom React hooks and queries
+│   ├── pages/              # Page components
+│   ├── utils/              # Utility functions
+│   ├── App.tsx             # Main app component
+│   ├── main.tsx            # App entry point
+│   └── index.css           # Global styles
+├── server/                 # Fastify backend API
+│   └── src/
+│       ├── controllers/    # Request handlers
+│       ├── routes/         # API route definitions
+│       ├── services/       # Business logic
+│       ├── utils/          # Utility functions
+│       └── index.ts        # Server entry point
+├── shared/                 # Shared code between client/server (data models, schemas)
+└── prisma/                 # Database layer
+```
+
+## Technologies Used
+
+### Frontend
+
+- **React 19** - Client code
+- **Vite** - Build tool for client code
+- **TanStack Query** - Query management
+- **Tailwind CSS** - Styling
+- **Vitest/React Testing Library** - Unit testing
+
+### Backend
+
+- **Fastify** - Web framework
+- **TSX** - Build tool for server code
+- **Prisma (SQLite)** - Database ORM
+- **Zod** - Schema validation
+- **Vitest** - Unit testing
+
+### Development Tools
+
+- **Biome** - Fast linter and formatter
+
+### Database
+
+- **Prisma ORM** - Type-safe database operations
+- **SQLite** - File-based database for development
 
 ## Architecture Decisions & Tradeoffs
 
@@ -84,9 +135,12 @@ npm run format
 ## TODO
 
 ### Deployment
-- [ ] Set up build tool
+
+- [ ] Set up build tool for server
+- [ ] Set up CI for linting, testing and building
 
 ### DX
+
 - [ ] Revisit/fix tsconfigs
 
 ### Database
